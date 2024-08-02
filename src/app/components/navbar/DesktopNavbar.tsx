@@ -1,7 +1,8 @@
-import { Button, Flex, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverHeader, PopoverTrigger, Stack, UnorderedList } from '@chakra-ui/react'
+import { Box, Button, Flex, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverHeader, PopoverTrigger, Stack, UnorderedList } from '@chakra-ui/react'
 import logo from '../../assets/img/church-logo.svg'
 import Image from 'next/image'
 import { navItem } from './nav-item'
+import { Link } from '@chakra-ui/next-js'
 
 export const DesktopNavbar = () => {
   return (
@@ -25,23 +26,40 @@ export const DesktopNavbar = () => {
         borderWidth={'thin'}
         borderColor={'green'}
         flexGrow={2}
+        alignItems={'center'}
+        justifyContent={'center'}
       >
         {
           navItem.map(item => (
-            <Popover key={item.label} trigger={'hover'}>
+            <Popover key={item.label} trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
-                <Button>{item.label}</Button>
+                <Box
+                  as={'a'}
+                  href={item.href ?? '#'}
+                  p={2}
+                >
+                  {item.label}
+                </Box>
               </PopoverTrigger>
               {
                 item.children && (
                   <PopoverContent>
-                    <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
+                    {
+                      item.children.map(item => (
+                        <PopoverBody key={item.label}>
+                          <Box
+                          as={'a'}
+                          href={item.href}
+                          >
+                            {item.label}
+                          </Box>
+                        </PopoverBody>
+                      ))
+                    }
                   </PopoverContent>
                 )
               }
-
             </Popover>
-
           ))
         }
       </Flex>
