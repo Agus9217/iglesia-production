@@ -13,5 +13,8 @@ export const navItem: NavItem[] = [
       { label: 'La red grupos', href: '/la-red-grupos' },
       { label: 'Escuela EDI', href: '/escuela-edi' }
     ]
-  }
+  },
+  { label: 'Contacto', href: '/contacto' },
+  { label: 'Eventos', href: '/eventos' },
+
 ]

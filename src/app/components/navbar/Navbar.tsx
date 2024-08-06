@@ -1,21 +1,29 @@
-import { Stack } from '@chakra-ui/react'
+import { Divider, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { DesktopNavbar } from './DesktopNavbar'
 
 export const Navbar = () => {
   return (
-    <Stack
-      as={'header'}
-      spacing={0}
-      position={'fixed'}
-      minH={'80px'}
-      w={'100%'}
-      borderWidth={'thin'}
-      borderColor={'blue'}
-      top={0}
-    >
-      <DesktopNavbar />
-    </Stack>
+    <>
+      <Divider
+        borderColor={'orange.100'}
+        borderWidth={'8px'}
+        mb={2}
+      />
+      <Stack
+        as={'header'}
+        spacing={0}
+        position={'fixed'}
+        minH={'106px'}
+        w={'100%'}
+        top={0}
+        justifyContent={'center'}
+      >
+
+        <DesktopNavbar />
+      </Stack>
+    </>
+
   )
 }
 
