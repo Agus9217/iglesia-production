@@ -5,9 +5,12 @@ import logo from '../../assets/img/church-logo.svg'
 import { IoIosArrowDown } from "react-icons/io";
 import Image from 'next/image'
 import { navItem } from './nav-item'
-import { Link } from '@chakra-ui/next-js'
+import { motion } from 'framer-motion';
+
+const MotionButton = motion(Button)
 
 export const DesktopNavbar = () => {
+
   return (
     <Stack
       spacing={0}
@@ -20,12 +23,26 @@ export const DesktopNavbar = () => {
         alignItems={'center'}
         justifyContent={'center'}
       >
-        <Image
-          src={logo}
-          alt={'Logo iglesia cristiana en barrio nuevo'}
-          width={60}
-          height={60}
-        />
+        <MotionButton
+          as={'a'}
+          variant={'ghost'}
+          href={'/'}
+          _hover={{
+            style: 'none'
+          }}
+          _active={{
+            style: 'none'
+          }}
+          whileHover={{ scale: 0.9 }}
+          whileTap={{ scale: 1.2 }}
+        >
+          <Image
+            src={logo}
+            alt={'Logo iglesia cristiana en barrio nuevo'}
+            width={60}
+            height={60}
+          />
+        </MotionButton>
       </Flex>
       <Flex
         flexGrow={2}
@@ -43,13 +60,16 @@ export const DesktopNavbar = () => {
                 <Button
                   as={'a'}
                   href={item.href ?? '#'}
-                  p={2}
-                  variant={'ghost'}
+                  p={4}
                   _hover={{
-                    color: 'orange.300'
+                    bg: 'orange.100'
                   }}
-                  rightIcon={<IoIosArrowDown />}
-
+                  rounded={'none'}
+                  variant={'ghost'}
+                  fontWeight={'medium'}
+                  rightIcon={
+                    item.children && <IoIosArrowDown size={'10px'} />
+                  }
                 >
                   {item.label}
                 </Button>
@@ -78,7 +98,7 @@ export const DesktopNavbar = () => {
                             display={'block'}
                             p={4}
                             _hover={{
-                              bg: 'orange.50'
+                              bg: 'orange.100'
                             }}
                           >
                             {item.label}

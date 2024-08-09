@@ -4,25 +4,26 @@ import { DesktopNavbar } from './DesktopNavbar'
 
 export const Navbar = () => {
   return (
-    <>
+    <Stack
+      as={'header'}
+      spacing={0}
+      position={'fixed'}
+      minH={'106px'}
+      w={'100%'}
+      top={0}
+      justifyContent={'center'}
+      zIndex={1000}
+    >
       <Divider
-        borderColor={'orange.100'}
+        position={'absolute'}
         borderWidth={'8px'}
-        mb={2}
-      />
-      <Stack
-        as={'header'}
-        spacing={0}
-        position={'fixed'}
-        minH={'106px'}
-        w={'100%'}
+        borderColor={'orange.100'}
         top={0}
-        justifyContent={'center'}
-      >
+      />
 
-        <DesktopNavbar />
-      </Stack>
-    </>
+
+      <DesktopNavbar />
+    </Stack>
 
   )
 }
