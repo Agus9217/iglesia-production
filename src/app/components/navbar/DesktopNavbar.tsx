@@ -15,6 +15,8 @@ export const DesktopNavbar = () => {
     <Stack
       spacing={0}
       direction={'row'}
+      w={'65%'}
+      mx={'auto'}
     >
       <Flex
         flexGrow={1}

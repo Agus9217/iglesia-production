@@ -13,15 +13,14 @@ export const Navbar = () => {
       top={0}
       justifyContent={'center'}
       zIndex={1000}
+      bg={'orange.50'}
     >
       <Divider
         position={'absolute'}
-        borderWidth={'8px'}
-        borderColor={'orange.100'}
+        borderWidth={'5px'}
+        borderColor={'orange.200'}
         top={0}
       />
-
-
       <DesktopNavbar />
     </Stack>
 

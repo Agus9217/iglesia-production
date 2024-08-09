@@ -14,6 +14,7 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource/merriweather": "^5.0.13",
     "framer-motion": "^11.3.21",
     "next": "14.2.5",
     "react": "^18",

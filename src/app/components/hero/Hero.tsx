@@ -1,4 +1,4 @@
-import { AspectRatio, Box } from '@chakra-ui/react'
+import { AspectRatio, Box, Flex, Heading, Highlight } from '@chakra-ui/react'
 import Image from 'next/image'
 import img from '../../assets/img/iglesia-hero-img.jpg'
 
@@ -18,9 +18,52 @@ export const Hero = () => {
           as={Image}
           src={img}
           alt={'Iglesia Cristiana Barrio Nuevo'}
-          filter={'opacity(20%) sepia(90%) contrast(60%)'}
+          filter={'opacity(12%) sepia(100%) contrast(100%)'}
         />
       </AspectRatio>
+      <Flex
+        position={'absolute'}
+        p={4}
+        top={'50%'}
+        left={'50%'}
+        maxW={'50%'}
+        w={'100%'}
+        transform={'translate(-50%, -50%)'}
+      >
+        <Box
+          maxW={'50%'}
+          w={'100%'}
+        >
+          <Heading
+            as={'h1'}
+            fontSize={'xl'}
+            color={'orange.700'}
+          >
+            Iglesia Cristiana en Barrio Nuevo
+          </Heading>
+        </Box>
+        <Box
+          maxW={'50%'}
+          w={'100%'}
+        >
+
+          <Heading
+            as={'h2'}
+            fontFamily={'merriweather'}
+            fontWeight={400}
+            fontSize={'7xl'}
+            >
+            <Highlight
+              query={['evangelizando', 'enseñando']}
+              styles={{
+                bg: 'orange.100',
+              }}
+            >
+            Bienvenidos a nuestra Iglesia evangelizando y enseñando en Barrio Nuevo
+            </Highlight>
+          </Heading>
+        </Box>
+      </Flex>
     </Box>
   )
 }
