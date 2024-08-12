@@ -18,7 +18,7 @@ export const Hero = () => {
           as={Image}
           src={img}
           alt={'Iglesia Cristiana Barrio Nuevo'}
-          filter={'opacity(12%) sepia(100%) contrast(100%)'}
+          filter={'opacity(20%) sepia(80%) contrast(40%)'}
         />
       </AspectRatio>
       <Flex
@@ -52,14 +52,14 @@ export const Hero = () => {
             fontFamily={'merriweather'}
             fontWeight={400}
             fontSize={'7xl'}
-            >
+          >
             <Highlight
               query={['evangelizando', 'enseñando']}
               styles={{
                 bg: 'orange.100',
               }}
             >
-            Bienvenidos a nuestra Iglesia evangelizando y enseñando en Barrio Nuevo
+              Bienvenidos a nuestra Iglesia evangelizando y enseñando en Barrio Nuevo
             </Highlight>
           </Heading>
         </Box>
