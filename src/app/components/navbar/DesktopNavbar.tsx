@@ -1,7 +1,7 @@
 'use client'
 
 import { Box, Button, Flex, Popover, PopoverBody, PopoverContent, PopoverTrigger, Stack, } from '@chakra-ui/react'
-import logo from '../../assets/img/church-logo.svg'
+import logo from '../../assets/img/church-logo.png'
 import { IoIosArrowDown } from "react-icons/io";
 import Image from 'next/image'
 import { navItem } from './nav-item'
@@ -15,7 +15,7 @@ export const DesktopNavbar = () => {
     <Stack
       spacing={0}
       direction={'row'}
-      w={'65%'}
+      w={'85%'}
       mx={'auto'}
     >
       <Flex
@@ -41,8 +41,7 @@ export const DesktopNavbar = () => {
           <Image
             src={logo}
             alt={'Logo iglesia cristiana en barrio nuevo'}
-            width={60}
-            height={60}
+            fill={true}
           />
         </MotionButton>
       </Flex>
